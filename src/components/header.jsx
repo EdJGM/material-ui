@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import { AppBar, Toolbar, Button, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
@@ -8,7 +8,7 @@ const Header = () => {
         <AppBar position="static" className="app-bar">
             <Toolbar>
                 <Link to="/" className="text-white">
-                    <Typography variant="h6">Inicio</Typography>
+                    <Button color="inherit">Inicio</Button>
                 </Link>
                 <Box sx={{ flexGrow: 1 }} />
                 <Button color="inherit">Acerca de</Button>
