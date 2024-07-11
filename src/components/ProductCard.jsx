@@ -11,21 +11,44 @@ const ProductCard = ({ id, image, name, price }) => {
     };
 
     return (
-        <Card sx={{ maxWidth: 250 }} className="shadow-lg">
+        <Card sx={{
+            maxWidth: 250,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            transition: 'transform 0.3s, box-shadow 0.3s',
+            '&:hover': {
+                transform: 'scale(1.05)',
+                boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
+            }
+        }}
+            className="shadow-lg">
             <CardMedia
                 component="img"
-                height="150"
+                height="auto"
                 image={image}
                 alt="product"
+                className='object-cover w-full h-48'
+                sx={{ objectFit: 'contain' }}
             />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+            <CardContent className='flex flex-col items-center'>
+                <Typography gutterBottom variant="h6" component="div" className="text-center" sx={{ marginBottom: 2 }}>
                     {name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" className="text-center" sx={{ marginBottom: 2 }}>
                     {price}
                 </Typography>
-                <Button variant="contained" onClick={handleBuyClick} className="bg-blue-500 hover:bg-blue-700 text-white hover">Comprar</Button>
+                <Button
+                    variant="contained"
+                    onClick={handleBuyClick}
+                    sx={{
+                        '&:hover': {
+                            backgroundColor: '#303f9f'
+                        }
+                    }}
+                    className="text-white">
+                    Comprar
+                </Button>
             </CardContent>
         </Card>
     );
