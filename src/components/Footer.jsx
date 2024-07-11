@@ -1,13 +1,11 @@
-// Crear un componente de pie de página (Footer) que incluya enlaces de redes sociales
-
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { AppBar, Toolbar, Button } from '@mui/material';
+import '../App.css'; // Import the global styles
 
 const Footer = () => {
     return (
-        <AppBar position="fixed" sx={{ top: 'auto', bottom: 0 }}>
-            <Toolbar>
-                <Typography variant="h6">Footer</Typography>
+        <AppBar position="fixed" className="footer-bar" sx={{ top: 'auto', bottom: 0 }}>
+            <Toolbar className="flex justify-center space-x-4">
                 <Button color="inherit">Facebook</Button>
                 <Button color="inherit">Instagram</Button>
                 <Button color="inherit">Twitter</Button>

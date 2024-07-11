@@ -1,16 +1,17 @@
-// Update the import statements to use @mui/material instead of @material-ui/core
-
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import '../App.css';
 
 const Header = () => {
     return (
-        <AppBar position="static">
+        <AppBar position="static" className="app-bar">
             <Toolbar>
-                <Typography variant="h6">Header</Typography>
-                <Button color="inherit">Home</Button>
-                <Button color="inherit">About</Button>
-                <Button color="inherit">Contact</Button>
+                <Link to="/" className="text-white">
+                    <Typography variant="h6">Home</Typography>
+                </Link>
+                <Button color="inherit">Acerca de</Button>
+                <Button color="inherit">Contacto</Button>
             </Toolbar>
         </AppBar>
     );
