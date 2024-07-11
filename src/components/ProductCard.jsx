@@ -6,6 +6,7 @@ import '../App.css'; // Import the global styles
 const ProductCard = ({ id, image, name, price }) => {
     const navigate = useNavigate();
 
+
     const handleBuyClick = () => {
         navigate(`/product/${id}`);
     };
@@ -22,7 +23,9 @@ const ProductCard = ({ id, image, name, price }) => {
                 boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
             }
         }}
-            className="shadow-lg">
+            className="shadow-lg"
+            onClick={handleBuyClick}
+        >
             <CardMedia
                 component="img"
                 height="auto"
@@ -31,7 +34,7 @@ const ProductCard = ({ id, image, name, price }) => {
                 className='object-cover w-full h-48'
                 sx={{ objectFit: 'contain' }}
             />
-            <CardContent className='flex flex-col items-center'>
+            <CardContent className='flex flex-col items-center' >
                 <Typography gutterBottom variant="h6" component="div" className="text-center" sx={{ marginBottom: 2 }}>
                     {name}
                 </Typography>

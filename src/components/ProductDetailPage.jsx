@@ -13,16 +13,21 @@ function ProductDetailPage({ products }) {
     }
 
     return (
-        <div>
+        <div className="flex flex-col min-h-screen">
             <Header />
-            <div className="flex justify-center items-center">
-                <div className="text-center">
-                    <div className="flex justify-center">
-                        <img src={product.image} alt="product" className="w-1/3 h-auto mb-2 mx-auto" />
+            <div className="flex-grow flex justify-center items-center bg-gray-100">
+                <div className="bg-white p-8 rounded-lg shadow-lg text-center w-2/3">
+                    <div className="flex justify-center mb-6">
+                        <img
+                            src={product.image}
+                            alt="product"
+                            className="max-w-xs max-h-80 mb-4 mx-auto rounded-lg object-contain" />
                     </div>
-                    <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
-                    <p className="text-lg mb-4">{product.price}</p>
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Buy</button>
+                    <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+                    <p className="text-xl text-gray-700 mb-6">{product.price}</p>
+                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                        Buy
+                    </button>
                 </div>
             </div>
             <Footer />
